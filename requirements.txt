@@ -1,0 +1,2 @@
+# Core site builder and AI generator use Python's standard library only.
+# Ollama must be installed separately for local AI article drafting.

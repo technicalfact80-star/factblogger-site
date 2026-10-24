@@ -1,0 +1,97 @@
+{
+  "slug": "android-app-permissions-review-guide",
+  "title": "How to Review App Permissions on Android Before You Install or Use an App",
+  "excerpt": "A practical privacy checklist for reviewing camera, microphone, location, contacts and other app permissions on Android.",
+  "language": "en",
+  "category": "Apps & Software",
+  "published": true,
+  "date": "2026-10-24",
+  "author": "FactBlogger Editorial Team",
+  "read_minutes": 7,
+  "image_url": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=82",
+  "image_alt": "Smartphone displaying a grid of mobile apps",
+  "image_credit": "Illustrative image from Unsplash; review suitability and current licence terms before publication.",
+  "seo_description": "Review Android app permissions, understand sensitive access such as location and microphone, and reduce unnecessary sharing of personal data.",
+  "intro": "App permissions control whether an application can access certain device features or information. The exact menus can differ by Android version and phone manufacturer, but a useful habit is to grant only the access that makes sense for the app's purpose and review it when that purpose changes.",
+  "sections": [
+    {
+      "heading": "Review permissions before and after installing",
+      "paragraphs": [
+        "Read the app's description, developer name and requested access before installing. A maps app may need location for navigation, while a simple calculator usually has no clear reason to access your contacts or microphone.",
+        "Permission requests can appear when you first use a feature. You do not have to approve every request automatically. If denying a permission breaks a feature you need, decide whether that feature is worth the access requested."
+      ]
+    },
+    {
+      "heading": "Understand common sensitive permissions",
+      "paragraphs": [
+        "Location may reveal places you visit. Camera and microphone access can expose images, video or audio. Contacts and call logs can reveal information about other people as well as you. Photos and files may include documents or personal images.",
+        "The risk depends on the app, how it uses the data, your device settings and the app's privacy practices. A permission alone does not prove that an app is malicious, but unexplained requests deserve attention."
+      ]
+    },
+    {
+      "heading": "Where to review access",
+      "paragraphs": [
+        "On many current Android phones, open Settings and look for Privacy, Permission Manager or Apps. Choose a permission category to see which apps have access, or open an individual app's App info page and review Permissions. Names and locations vary by device and Android version.",
+        "For permissions that support it, choose an option such as allowing only while using the app, asking every time, or not allowing. Use the most restrictive option that still supports the function you need."
+      ]
+    },
+    {
+      "heading": "Build a monthly privacy habit",
+      "paragraphs": [
+        "Remove apps you no longer use, install updates from trusted sources, and periodically check the permissions of apps that handle sensitive information. Avoid sideloading applications from unknown websites unless you understand the source and risks.",
+        "If an app behaves unexpectedly, revoke unnecessary permissions and investigate through the developer's official support channel. Do not assume that clearing a permission alone resolves every security issue."
+      ]
+    },
+    {
+      "heading": "Choose the least access that still works",
+      "paragraphs": [
+        "If Android offers a limited option, such as allowing location only while using the app or selecting specific photos, consider whether that option meets your need. You can often change the decision later in the app information or permission settings, though exact choices vary by Android version and app.",
+        "Some apps genuinely need sensitive access for a feature, but that does not mean you should grant every permission at first launch. Try the app with limited access first, then decide whether to enable more access only when a feature you want requires it."
+      ],
+      "bullets": [
+        "Ask what feature needs the permission.",
+        "Prefer one-time or while-in-use options when practical.",
+        "Revoke permissions that are no longer necessary."
+      ]
+    },
+    {
+      "heading": "What to do when a permission request feels wrong",
+      "paragraphs": [
+        "Pause rather than tapping Allow out of habit. Check the developer name, the app’s official website, its privacy information and recent support notes. If the requested access does not fit the advertised purpose, look for a reputable alternative or contact the developer through an official channel.",
+        "If you decide you no longer trust an app, revoke unnecessary permissions and uninstall it if appropriate. For suspected account compromise or financial fraud, also secure affected accounts and contact the relevant service provider; changing a permission alone may not resolve the underlying problem."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Should I allow every permission an app asks for?",
+      "answer": "No. Consider whether the permission is necessary for the feature you want and choose a limited option where available."
+    },
+    {
+      "question": "Are the exact Android settings the same on all phones?",
+      "answer": "No. Menu names and permission controls can differ by Android version and manufacturer."
+    },
+    {
+      "question": "Does a camera permission mean an app is spying?",
+      "answer": "Not necessarily. It grants access for applicable features; assess whether the request matches the app's purpose and review its reputation and privacy information."
+    }
+  ],
+  "tags": [
+    "Android",
+    "app permissions",
+    "privacy",
+    "mobile security"
+  ],
+  "sources": [
+    {
+      "title": "Android Help — Change app permissions on your Android phone",
+      "url": "https://support.google.com/android/answer/9431959"
+    },
+    {
+      "title": "Android Developers — Permissions on Android",
+      "url": "https://developer.android.com/guide/topics/permissions/overview"
+    }
+  ],
+  "image_license": "Unsplash License — review current terms",
+  "image_license_url": "https://unsplash.com/license"
+}

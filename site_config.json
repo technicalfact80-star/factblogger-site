@@ -1,0 +1,13 @@
+{
+  "site_name": "FactBlogger",
+  "tagline": "Useful answers. Smarter digital life.",
+  "description": "Practical, carefully reviewed guides to AI, technology, apps, careers, SEO and digital services for readers in India — in English and Hindi.",
+  "base_url": "https://YOUR-PROJECT.pages.dev/",
+  "language": "en-IN",
+  "contact_email": "REPLACE_WITH_YOUR_EMAIL",
+  "adsense_publisher_id": "",
+  "adsense_auto_ads_enabled": false,
+  "default_language": "en",
+  "posts_per_page": 12,
+  "google_site_verification": ""
+}
