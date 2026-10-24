@@ -72,6 +72,15 @@ def main():
     elif not pub: warn('AdSense is not connected; this is expected before applying or receiving a publisher ID')
     else: ok('AdSense publisher ID format is valid')
 
+    categories_path=ROOT/'categories.json'
+    category_list=[]
+    if categories_path.exists():
+        try:
+            category_list=json.loads(categories_path.read_text(encoding='utf-8'))
+            if not isinstance(category_list,list) or not category_list: block('categories.json must be a non-empty JSON array')
+            else: ok(f'{len(category_list)} configurable categories found')
+        except Exception as exc: block(f'categories.json is invalid: {exc}')
+    else: warn('categories.json is missing; builder will use built-in categories')
     required=['index.html','404.html','categories/index.html','about/index.html','contact/index.html','privacy-policy/index.html','disclaimer/index.html','editorial-policy/index.html','robots.txt','sitemap.xml','rss.xml']
     missing=[f for f in required if not (PUBLIC/f).exists()]
     if missing: block('Generated public files missing: '+', '.join(missing))
@@ -94,7 +103,14 @@ def main():
     if content_posts: ok('Content library JSON is readable')
 
     if PUBLIC.exists():
-        html_files=list(PUBLIC.rglob('*.html'))
+        html_files=[]
+        for candidate in PUBLIC.rglob('*.html'):
+            if candidate.name.startswith('google') and 'google-site-verification:' in candidate.read_text(encoding='utf-8',errors='replace')[:300]:
+                continue
+            html_files.append(candidate)
+        for cat in category_list:
+            slug=str(cat.get('slug','')) if isinstance(cat,dict) else ''
+            if slug and not (PUBLIC/'categories'/slug/'index.html').exists(): block(f'Missing generated page for category slug: {slug}')
         broken=[]; html_no_title=[]; old_brand=[]
         for p in html_files:
             raw=p.read_text(encoding='utf-8',errors='replace')

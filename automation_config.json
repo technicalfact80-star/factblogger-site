@@ -1,0 +1,11 @@
+{
+  "run_evergreen_queue_daily": true,
+  "fetch_news_daily": true,
+  "max_news_drafts_per_run": 2,
+  "auto_publish_news": false,
+  "auto_publish_evergreen": false,
+  "max_age_hours": 72,
+  "require_two_source_domains_for_news_autopublish": true,
+  "auto_publish_min_words": 700,
+  "schedule_note": "Windows Task Scheduler runs run_daily_automation.bat. Keep the PC awake and Ollama running."
+}

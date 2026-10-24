@@ -16,13 +16,48 @@ BASE = CONFIG.get('base_url', '').strip()
 BASE = BASE.rstrip('/') + '/' if BASE else ''
 BASE_OK = bool(re.fullmatch(r'https://[A-Za-z0-9.-]+(?::[0-9]+)?/', BASE)) and 'YOUR-' not in BASE
 EMAIL = CONFIG.get('contact_email', '').strip()
-CATEGORIES = [
+DEFAULT_CATEGORIES = [
     {'name':'AI & Technology','slug':'ai-technology','icon':'✳','short':'AI tools, software, coding and technology tutorials.','description':'Practical AI and technology guides, software explainers, coding workflows and digital safety tips.'},
     {'name':'Education & Careers','slug':'education-careers','icon':'↗','short':'Internships, resumes, courses and career guides.','description':'Useful resources for students, freshers, job seekers, portfolios and software career preparation.'},
     {'name':'Blogging & SEO','slug':'blogging-seo','icon':'⌁','short':'Search, content, websites and growth.','description':'Clear guides to search engine optimization, content planning, site structure and website publishing.'},
     {'name':'Apps & Software','slug':'apps-software','icon':'▦','short':'App tutorials, reviews and software solutions.','description':'App settings, troubleshooting, software comparisons and practical product guides.'},
-    {'name':'India Digital Guides','slug':'india-digital-guides','icon':'⌘','short':'Online services and digital life in India.','description':'Digital safety, online services and practical technology explanations for readers in India.'}
+    {'name':'India Digital Guides','slug':'india-digital-guides','icon':'⌘','short':'Online services and digital life in India.','description':'Digital safety, online services and practical technology explanations for readers in India.'},
+    {'name':'News & Trends','slug':'news-trends','icon':'◉','short':'Verified technology news, official announcements and useful explainers.','description':'Carefully sourced updates about technology, AI and important digital developments, with context and links to primary sources.'}
 ]
+
+def load_categories():
+    path = ROOT / 'categories.json'
+    try:
+        raw = json.loads(path.read_text(encoding='utf-8')) if path.exists() else DEFAULT_CATEGORIES
+    except Exception as exc:
+        print(f'WARNING: cannot read categories.json ({exc}); using built-in categories')
+        raw = DEFAULT_CATEGORIES
+    if not isinstance(raw, list):
+        raise ValueError('categories.json must contain a JSON array')
+    categories = []
+    seen_names, seen_slugs = set(), set()
+    for item in raw:
+        if not isinstance(item, dict):
+            continue
+        name = str(item.get('name', '')).strip()
+        slug = str(item.get('slug', '')).strip().lower()
+        if not name or not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug):
+            continue
+        if name.casefold() in seen_names or slug in seen_slugs:
+            continue
+        category = {
+            'name': name, 'slug': slug,
+            'icon': str(item.get('icon', '•'))[:8],
+            'short': str(item.get('short') or item.get('description') or name),
+            'description': str(item.get('description') or item.get('short') or name)
+        }
+        categories.append(category)
+        seen_names.add(name.casefold()); seen_slugs.add(slug)
+    if not categories:
+        raise ValueError('categories.json contains no valid categories')
+    return categories
+
+CATEGORIES = load_categories()
 CAT_MAP = {c['name']: c for c in CATEGORIES}
 
 
@@ -259,6 +294,10 @@ def main():
     clean_public_directory()
     PUBLIC.mkdir(parents=True)
     shutil.copytree(ASSETS, PUBLIC/'assets')
+    # Preserve Search Console HTML file verification across every rebuild.
+    for verify_file in ROOT.glob('google*.html'):
+        if verify_file.is_file():
+            shutil.copy2(verify_file, PUBLIC / verify_file.name)
     posts=load_posts()
     # Root homepage and article URLs
     (PUBLIC/'index.html').write_text(render_home(posts),encoding='utf-8')

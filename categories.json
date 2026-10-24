@@ -1,0 +1,8 @@
+[
+  {"name":"AI & Technology","slug":"ai-technology","icon":"✳","short":"AI tools, software, coding and technology tutorials.","description":"Practical AI and technology guides, software explainers, coding workflows and digital safety tips."},
+  {"name":"Education & Careers","slug":"education-careers","icon":"↗","short":"Internships, resumes, courses and career guides.","description":"Useful resources for students, freshers, job seekers, portfolios and software career preparation."},
+  {"name":"Blogging & SEO","slug":"blogging-seo","icon":"⌁","short":"Search, content, websites and growth.","description":"Clear guides to search engine optimization, content planning, site structure and website publishing."},
+  {"name":"Apps & Software","slug":"apps-software","icon":"▦","short":"App tutorials, reviews and software solutions.","description":"App settings, troubleshooting, software comparisons and practical product guides."},
+  {"name":"India Digital Guides","slug":"india-digital-guides","icon":"⌘","short":"Online services and digital life in India.","description":"Digital safety, online services and practical technology explanations for readers in India."},
+  {"name":"News & Trends","slug":"news-trends","icon":"◉","short":"Verified technology news, official announcements and useful explainers.","description":"Carefully sourced updates about technology, AI and important digital developments, with context and links to primary sources."}
+]

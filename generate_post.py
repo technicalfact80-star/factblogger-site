@@ -9,7 +9,12 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 DRAFTS=ROOT/'drafts'
 CONFIG=json.loads((ROOT/'site_config.json').read_text(encoding='utf-8'))
-CATEGORIES=['AI & Technology','Education & Careers','Blogging & SEO','Apps & Software','India Digital Guides']
+
+try:
+    CATEGORIES=[str(x['name']) for x in json.loads((ROOT/'categories.json').read_text(encoding='utf-8')) if isinstance(x,dict) and x.get('name')]
+except Exception:
+    CATEGORIES=['AI & Technology','Education & Careers','Blogging & SEO','Apps & Software','India Digital Guides']
+
 DEFAULT_IMAGES={
  'AI & Technology':('https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=82','Illustrative AI and technology image','https://unsplash.com/'),
  'Education & Careers':('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=82','Illustrative education and career image','https://unsplash.com/'),
@@ -194,7 +199,7 @@ def main():
     img_query=str(data.get('image_query') or args.topic)
     image=find_commons_image(img_query)
     if image.get('image_license')=='Review required':
-        fallback=DEFAULT_IMAGES[args.category]
+        fallback=DEFAULT_IMAGES.get(args.category, DEFAULT_IMAGES.get('AI & Technology'))
         image.update({'image_url':fallback[0],'image_alt':fallback[1]+' — '+str(data.get('title') or args.topic),'image_source_url':fallback[2],'image_credit':'Unsplash category fallback; verify current usage terms and suitability before publication'})
     valid_source_urls={item['url'] for item in source_data}
     filtered_sources=[]

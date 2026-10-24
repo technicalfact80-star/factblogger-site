@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Press Information Bureau (India) — Press Releases",
+    "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3",
+    "domain": "pib.gov.in",
+    "category": "News & Trends",
+    "language": "en",
+    "enabled": true,
+    "trust_level": "official"
+  },
+  {
+    "name": "Google India Blog",
+    "url": "https://blog.google/intl/en-in/feed/",
+    "domain": "blog.google",
+    "category": "News & Trends",
+    "language": "en",
+    "enabled": true,
+    "trust_level": "official"
+  },
+  {
+    "name": "OpenAI News",
+    "url": "https://openai.com/news/rss.xml",
+    "domain": "openai.com",
+    "category": "News & Trends",
+    "language": "en",
+    "enabled": true,
+    "trust_level": "official"
+  },
+  {
+    "name": "GitHub Blog",
+    "url": "https://github.blog/feed/",
+    "domain": "github.blog",
+    "category": "News & Trends",
+    "language": "en",
+    "enabled": true,
+    "trust_level": "official"
+  }
+]
