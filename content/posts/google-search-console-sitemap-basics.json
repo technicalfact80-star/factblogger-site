@@ -1,0 +1,85 @@
+{
+  "slug": "google-search-console-sitemap-indexing-beginners",
+  "title": "Google Search Console and Sitemaps: A Beginner's Guide",
+  "excerpt": "Understand what a sitemap does, how Search Console reports indexing, and which checks to make when a page is not appearing on Google.",
+  "language": "en",
+  "category": "Blogging & SEO",
+  "published": true,
+  "date": "2026-10-24",
+  "author": "FactBlogger Editorial Team",
+  "read_minutes": 7,
+  "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=82",
+  "image_alt": "Laptop showing analytics charts on a desk",
+  "image_credit": "Illustrative image from Unsplash; review suitability and current licence terms before publication.",
+  "seo_description": "Learn how Google Search Console, XML sitemaps and URL inspection help website owners monitor crawling and indexing.",
+  "intro": "Publishing a page does not automatically mean that it will appear in Google Search. Search engines need to discover and crawl URLs, decide whether to index them, and determine which results best answer a query. Search Console helps a site owner monitor parts of this process, but it cannot guarantee rankings.",
+  "sections": [
+    {
+      "heading": "What Search Console tells you",
+      "paragraphs": [
+        "Google Search Console reports information about a website's presence in Google Search, including search performance and indexing-related issues. It is different from an analytics tool that measures what visitors do after reaching your website.",
+        "Start by verifying ownership of your site, opening the Pages or indexing report, and checking URL Inspection for important pages. Reports may have a delay, so do not expect every change to appear immediately."
+      ]
+    },
+    {
+      "heading": "What an XML sitemap is for",
+      "paragraphs": [
+        "A sitemap is a file that lists URLs you want search engines to know about. It can be especially helpful when a site is new or has many pages. A sitemap is a discovery hint, not a command to index every URL.",
+        "For this website, the generated file is available at /sitemap.xml. Once the website is online, replace the sample domain in the configuration, rebuild, and open the sitemap URL in your browser to confirm it contains your real public URLs."
+      ]
+    },
+    {
+      "heading": "Submit the sitemap",
+      "paragraphs": [
+        "In Search Console, select the correct verified property and open Sitemaps. Enter sitemap.xml if the site root is the property root, then submit it. If your site uses a path-based project URL, ensure the sitemap's URLs and property match that path.",
+        "After submission, check the status shown in Search Console. A successful submission means Google could process the sitemap; it does not mean every URL has been indexed."
+      ]
+    },
+    {
+      "heading": "Troubleshoot a page that is not indexed",
+      "paragraphs": [
+        "First, open the page directly in a browser and confirm it works without a login. Next, inspect the URL in Search Console and read the reported reason rather than guessing. Check for accidental noindex directives, wrong canonical URLs, broken internal links, redirects and server errors.",
+        "Also ask whether the page deserves to be indexed. A thin duplicate page may not be useful simply because it exists. Improve the page for readers, add relevant internal links, and request indexing after a meaningful fix if the tool offers that option."
+      ]
+    },
+    {
+      "heading": "Use Search Console as a feedback loop",
+      "paragraphs": [
+        "Review clicks, impressions and queries weekly, especially for pages that have had time to collect data. Look for topics people are already finding, queries where your article could answer the question more clearly, and technical issues that affect important pages.",
+        "Avoid repeatedly changing a title or requesting indexing without a reason. Make clear improvements, record what changed and give the data time to update."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does submitting a sitemap guarantee indexing?",
+      "answer": "No. A sitemap helps search engines discover URLs, but Google decides which pages to crawl and index."
+    },
+    {
+      "question": "How often should I submit a sitemap?",
+      "answer": "Submit the sitemap once for the verified site and keep it updated as URLs change. You generally do not need to resubmit it after every article if it updates automatically."
+    },
+    {
+      "question": "Can Search Console make my article rank first?",
+      "answer": "No. It provides diagnostics and performance information, not a ranking guarantee."
+    }
+  ],
+  "tags": [
+    "Google Search Console",
+    "sitemap",
+    "SEO",
+    "indexing"
+  ],
+  "sources": [
+    {
+      "title": "Google Search Central — Build and submit a sitemap",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap"
+    },
+    {
+      "title": "Google Search Console Help",
+      "url": "https://support.google.com/webmasters/"
+    }
+  ],
+  "image_license": "Unsplash License — review current terms",
+  "image_license_url": "https://unsplash.com/license"
+}
